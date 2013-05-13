@@ -9,7 +9,7 @@ import System.IO
 
 -- yes, these are functions; just very simple ones
 -- that accept no input and return static values
-myTerminal    = "xfce4-terminal"
+myTerminal    = "uxterm"
 myModMask     = mod4Mask -- Win key or Super_L
 myBorderWidth = 2
 myManageHook = composeAll
@@ -33,7 +33,7 @@ myLayout = avoidStruts $
 
 main = do
    xmproc <- spawnPipe "/usr/bin/xmobar /home/kbush/.xmobarrc"
-   trayproc <- spawnPipe "killall trayer; trayer  --edge top --align center --SetDockType true --SetPartialStrut true  --expand true --widthtype request --transparent true --tint 0 --alpha 0 --height 16 --distance 0 --padding 0"
+   trayproc <- spawnPipe "killall trayer; trayer  --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 10 --height 12  --transparent true --tint 0 --alpha 0 --height 16 --distance 0 --padding 0"
    xmonad $ defaultConfig
      { terminal    = myTerminal
      , modMask     = myModMask
@@ -47,7 +47,7 @@ main = do
              , ppTitle = xmobarColor "#6EADF1" "" . shorten 80 
              }  
      } `additionalKeys`
-        [ ((mod4Mask .|. shiftMask, xK_z), spawn "xlock -mode blank")
+        [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
         , ((mod4Mask .|. shiftMask, xK_b), sendMessage ToggleStruts) 

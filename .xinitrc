@@ -4,11 +4,23 @@
 #
 # Executed by startx (run your window manager from here)
 
-
+#fix cursor
 xsetroot -cursor_name left_ptr
+
+#start some shit
 xfce4-power-manager &
-~/.dropbox-dist/dropboxd &
-exec xmonad 
+#~/.dropbox-dist/dropboxd &
+nm-applet &
+/usr/bin/xscreensaver -no-splash &
+
+#compositing
+xcompmgr -c &
+
+#set background
+feh --bg-scale ~/Pictures/Walls/joy.png
+
+#start xmonad
+exec ck-launch-session xmonad 
 
 # exec gnome-session
 # exec startkde

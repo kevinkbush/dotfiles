@@ -33,7 +33,7 @@ myLayout = avoidStruts $
 
 main = do
    xmproc <- spawnPipe "/usr/bin/xmobar /home/kbush/.xmobarrc"
-   trayproc <- spawnPipe "killall trayer; trayer  --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 10 --height 12  --transparent true --tint 0 --alpha 0 --height 16 --distance 0 --padding 0"
+   trayproc <- spawnPipe "killall trayer; trayer  --edge top --align right --SetDockType true --SetPartialStrut true  --expand true --width 5 --height 12  --transparent true --tint 0 --alpha 0 --height 16 --distance 0 --padding 0"
    xmonad $ defaultConfig
      { terminal    = myTerminal
      , modMask     = myModMask

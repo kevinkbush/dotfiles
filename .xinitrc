@@ -8,7 +8,6 @@
 xsetroot -cursor_name left_ptr
 
 #start some shit
-xfce4-power-manager &
 #~/.dropbox-dist/dropboxd &
 nm-applet &
 /usr/bin/xscreensaver -no-splash &
